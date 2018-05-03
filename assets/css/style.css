@@ -1,0 +1,24 @@
+html { 
+    background: url('../images/BobsBurgers.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+.container {
+    width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	background: beige;
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 30px;
+    border: 1px solid #0f0f0f;
+    opacity:0.95;
+    height:600px;
+}
+
+.container-header{
+    text-align: center;
+}
