@@ -69,11 +69,11 @@ function InitializeGame() {
 };
 
 // Ask Questions Function
-// 1.
-// 2.
-// 3.
-// 4.
-// 5.
+// 1. Empties the divs and asks current question with corresponding choices in the object array.
+// 2. 30 second timer is running when question is asked. Variable answered is true as long as a choice is 
+// chosen before the 30 seconds run out.
+// 3. Timer is stopped when an answer is clicked.
+// 4. Page immediately changes to the Solutions Page Function
 function askQuestions() {
 
     $("#results").empty();
@@ -102,18 +102,17 @@ function askQuestions() {
 };
 
 // Run Function
-// 1.
-// 2.
+// 1. Run Function runs with the Decrement function to set a 30 second countdown timer on the current question page.
 function run() {
     answered = true;
     timeRemaining=30;
-    $("#time").html("<h2> Time Remaining:" + timeRemaining + "</h2>");
+    $("#time").html("<h2> Time Remaining:" + timeRemaining + " seconds </h2>");
     timerId=setInterval(decrement, 1000);
 };
 
 // Decrement Function
-// 1.
-// 2.
+// 1. Working with the Run Function, the time remaining goes down by one.
+// 2. If the time runs out, answered becomes false, the timer is cleared, and the solutions page is ran.
 function decrement() {
     timeRemaining--;
     $("#time").html("<h2> Time Remaining:" + timeRemaining + "</h2>");
