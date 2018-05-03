@@ -115,7 +115,7 @@ function run() {
 // 2. If the time runs out, answered becomes false, the timer is cleared, and the solutions page is ran.
 function decrement() {
     timeRemaining--;
-    $("#time").html("<h2> Time Remaining:" + timeRemaining + "</h2>");
+    $("#time").html("<h2> Time Remaining:" + timeRemaining + " seconds </h2>");
 
     if (timeRemaining === 0) {
         answered = false;
