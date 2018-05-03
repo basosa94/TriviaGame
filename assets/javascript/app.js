@@ -81,7 +81,7 @@ function askQuestions() {
     $("#correct-answer").empty();
     answered = true;
 
-    $("#questionbox").html('<h3> Question ' +(currentQuestion + 1) +' of '+ questionsAndAnswers.length + '</h3>');
+    $("#questionbox").text('Question ' +(currentQuestion + 1) +' of '+ questionsAndAnswers.length);
     $("#question").html('<h2>' + questionsAndAnswers[currentQuestion].question + '</h2>')
     for(var i=0; i<questionsAndAnswers[currentQuestion].answer.length; i++){
         var answerChoice =$('<div>');
@@ -106,7 +106,7 @@ function askQuestions() {
 function run() {
     answered = true;
     timeRemaining=30;
-    $("#time").html("<h2> Time Remaining:" + timeRemaining + " seconds </h2>");
+    $("#time").html("<h3> Time Remaining: " + timeRemaining + " seconds </h3>");
     timerId=setInterval(decrement, 1000);
 };
 
@@ -115,7 +115,7 @@ function run() {
 // 2. If the time runs out, answered becomes false, the timer is cleared, and the solutions page is ran.
 function decrement() {
     timeRemaining--;
-    $("#time").html("<h2> Time Remaining:" + timeRemaining + " seconds </h2>");
+    $("#time").html("<h3> Time Remaining: " + timeRemaining + " seconds </h3>");
 
     if (timeRemaining === 0) {
         answered = false;
@@ -178,6 +178,7 @@ function finalScore() {
     $("#unanswered").text("Unanswered: " + numberUnanswered);
     $("#total-score").text("Total Score: " + numberCorrect + "/" + questionsAndAnswers.length);
     $("#gif").html("<img src='assets/images/end.gif' width='300px'/>");
+    $("#restartButton").addClass("btn btn-primary btn-lg")
 	$('#restartButton').show();
 	$('#restartButton').html('Restart');
 };

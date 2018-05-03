@@ -1,24 +1,40 @@
-html { 
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
+
+body { 
     background: url('../images/BobsBurgers.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: 'Pangolin', cursive !important;
   }
 
-.container {
+.containermain {
     width: 100%;
-	max-width: 960px;
+	max-width: 960px ;
 	margin: 0 auto;
-	background: beige;
+	background: rgba(245,220,180,0.80);
 	width: 100%;
-	padding: 20px;
+    padding: 20px;
+    margin-top:50px;
 	margin-bottom: 30px;
     border: 1px solid #0f0f0f;
-    opacity:0.95;
     height:600px;
 }
 
 .container-header{
     text-align: center;
+}
+
+#start {
+    margin-top: 200px;
+    padding: 20px 60px;
+}
+
+#questionbox,
+#time,
+#question,
+#choices,
+#gif{
+    margin:20px 0;
 }

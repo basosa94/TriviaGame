@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <title></title>
 
-    <!-- Add css and jQuery links -->
+    <!-- Add css/bootstrap and jQuery links -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 </head>   
 
 <body>
-    <div class="container">
+    <div class="containermain">
         <div class="container-header">
             <h1 id="header">Bob's Burgers Trivia Game</h1>
                 <div id="time"></div>
                 <div id="questionbox"></div>
                 <div id="question"></div>
                 <div id="choices"></div>
-                <button id="start">Start</button>
+                <button type="button" id="start" class="btn btn-primary btn-lg">Start</button>
                 <div id="results"></div>
                 <div id="correct-answer"></div>
                 <div id="incorrect-answer"></div>
