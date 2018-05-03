@@ -34,7 +34,7 @@ var questionsAndAnswers = [{
     answerIndex:2
     }];
 
-// Define variables for game 
+// Define variables for that will be used for trivia game 
 var numberCorrect =0; 
 var numberIncorrect=0;
 var numberUnanswered=0;
@@ -44,33 +44,43 @@ var timerId;
 var answered;
 var userPick;
 
-
-//Start function for button so that questions appear
+// Start Button Function
+// 1. When start button is pressed questions with corresponding answer choices appear on the screen.
 $("#start").on("click", function () {
     $(this).hide();
     askQuestions();
 });
 
-function InitializeGame(){;
-// Reset variables and load first question
-numberCorrect=0; 
-numberIncorrect=0;
-numberUnanswered=0;
-currentQuestion=0;
-$("#results").empty();
-$("#correct-answer").empty();
-$("#incorrect-answer").empty();
-$("#unanswered").empty();
-$("#total-score").empty();
-$("#gif").empty();
-askQuestions();
-}
+// Initialize Game Function
+// 1. Resets variable values and div tags.
+// 2. Calls upon askQuestions function to begin the quiz.
+function InitializeGame() {
+    numberCorrect=0; 
+    numberIncorrect=0;
+    numberUnanswered=0;
+    currentQuestion=0;
+    $("#results").empty();
+    $("#correct-answer").empty();
+    $("#incorrect-answer").empty();
+    $("#unanswered").empty();
+    $("#total-score").empty();
+    $("#gif").empty();
+    askQuestions();
+};
 
-function askQuestions(){
+// Ask Questions Function
+// 1.
+// 2.
+// 3.
+// 4.
+// 5.
+function askQuestions() {
+
     $("#results").empty();
     $("#gif").empty();
     $("#correct-answer").empty();
     answered = true;
+
     $("#questionbox").html('<h3> Question ' +(currentQuestion + 1) +' of '+ questionsAndAnswers.length + '</h3>');
     $("#question").html('<h2>' + questionsAndAnswers[currentQuestion].question + '</h2>')
     for(var i=0; i<questionsAndAnswers[currentQuestion].answer.length; i++){
@@ -89,9 +99,11 @@ function askQuestions(){
         solutionsPage();
     });
 
-}
+};
 
-// Set up timer for each question
+// Run Function
+// 1.
+// 2.
 function run() {
     answered = true;
     timeRemaining=30;
@@ -99,19 +111,25 @@ function run() {
     timerId=setInterval(decrement, 1000);
 };
 
-function decrement(){
+// Decrement Function
+// 1.
+// 2.
+function decrement() {
     timeRemaining--;
     $("#time").html("<h2> Time Remaining:" + timeRemaining + "</h2>");
 
     if (timeRemaining === 0) {
         answered = false;
-        //  ...run the stop function.
         clearInterval(timerId);
-
         solutionsPage();
     }
-}
+};
 
+// Solution Page Function
+// 1. Divs containing text from askQuestions function are cleared
+// 2. Function records number of correct, incorrect and unanswered using conditional statements.
+// 3. Calls upon finalScore function if no more questions left
+// 4. Calls upon askQuestions function if there are questions that haven't be answered.
 function solutionsPage() {
 
     $("#questionbox").empty();    
@@ -143,9 +161,14 @@ function solutionsPage() {
         setTimeout(askQuestions, 3000);
     }
     
-}
+};
 
-function finalScore(){
+// Final Score Function
+// 1. Clears out the divs used for the solutionsPage function.
+// 2. Records the number of correct, incorrect and unanswered questions.
+// 3. Total-score is recorded by dividing numberCorrect by the length of the object array.
+// 4. Shows a restart button so that it can be clicked and restart the quiz.
+function finalScore() {
     $("#results").empty();
     $("#correct-answer").empty();
     $("#gif").empty();
@@ -158,10 +181,11 @@ function finalScore(){
     $("#gif").html("<img src='assets/images/end.gif' width='300px'/>");
 	$('#restartButton').show();
 	$('#restartButton').html('Restart');
-}
+};
 
-// restartButton
-$("#restartButton").on("click", function(){
+// Restart Button Function
+// 1. When restart is clicked, game is reset and trivia game starts back at question 1.
+$("#restartButton").on("click", function() {
     $(this).hide();
     InitializeGame();
 });
