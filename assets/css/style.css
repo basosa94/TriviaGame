@@ -32,9 +32,29 @@ body {
 }
 
 #questionbox,
+#results,
+#correct-answer,
+#incorrect-answer,
+#unanswered,
+#total-score{
+    font-size: 20px;
+}
+
+#questionbox,
 #time,
 #question,
 #choices,
 #gif{
     margin:20px 0;
+}
+
+#choices{
+    cursor: pointer;
+}
+
+.possibleChoice{
+    font-size: 20px;
+    width:500px;
+    height:50px;
+    margin: 0 auto;
 }
